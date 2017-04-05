@@ -8,8 +8,8 @@ Get-storageInfoByCluster
 .Example
     ./Get-StorageByCluster.ps1
      Script will prompt to select a cluster
-     
-.Credits
+ 
+.Creadits
     I can't remember where I first saw the storage code, I have been using it for years..
 #>
 
