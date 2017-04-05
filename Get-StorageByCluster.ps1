@@ -3,15 +3,15 @@ Get-storageInfoByCluster
 
 .Description
     Get cluster LUN info
-	russ 02/05/2016
-
+	russ 05/04/2017
     
 .Example
-    ./Get-StorageByCluster
+    ./Get-StorageByCluster.ps1
+     Script will prompt to select a cluster
+     
+.Credits
+    I can't remember where I first saw the storage code, I have been using it for years..
 #>
-
-
-
 
 
 
@@ -41,18 +41,13 @@ $initalTime = Get-Date
 $date = Get-Date ($initalTime) -uformat %Y%m%d
 $time = Get-Date ($initalTime) -uformat %H%M
 Write-Host "---------------------------------------------------------" -ForegroundColor DarkYellow
-Write-Host "Output will be saved to:"  								   -ForegroundColor Yellow
+Write-Host "Output will be saved to:"  				       -ForegroundColor Yellow
 Write-Host $filepath$datacenter$clusName-$filename-$date$time".csv"    -ForegroundColor White
 Write-Host "---------------------------------------------------------" -ForegroundColor DarkYellow
 
 $clusName | Select Name
 
-
-
-#param($clusName,$csvName=("C:\vSpherePowerCLI\Output" + $clusName + "-LUN.csv"))
-
 $rndNum = Get-Random -Maximum 99999
-
 $LunInfoDef = @"
 	public string ClusterName;
 	public string CanonicalName;
